@@ -44,14 +44,14 @@ const TextAnimation: FC<TextAnimationProps> = ({ text, classNameDiv, classNameSp
 
     return (
         <motion.div
-            className={cn("overflow-hidden flex h-fit", classNameDiv)}
+            className={cn("overflow-hidden flex h-fit ", classNameDiv)}
             variants={container}
             initial="hidden"
             animate="visible"
         >
             {letters.map((letter, index) => {
                 return (
-                    <motion.span className={cn("text-[1.6rem] lg:text-5xl text-white font-bold min-[430px]:text-3xl ", classNameSpan)} variants={child} key={index}>
+                    <motion.span className={cn("text-[1.6rem] lg:text-5xl text-white font-bold min-[430px]:text-3xl font-acorn", classNameSpan)} variants={child} key={index}>
                         {letter === " " ? "\u00A0" : letter}
                     </motion.span>
                 )

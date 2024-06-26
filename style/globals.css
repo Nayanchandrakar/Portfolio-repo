@@ -9,72 +9,12 @@ html {
 }
 
 body {
-    background: url('../public/home/bg.jpeg');
-    background-position: 0 0;
-    background-size: cover;
-    background-repeat: repeat-y;
-    background-attachment: fixed;
-}
-
-.cardBg {
-    background-color: hsla(0, 0%, 100%, .15);
-}
-
-.parallax_effect {
-    transform-style: preserve-3d;
-}
-
-.overlay::before {
-    left: 0;
-    top: 0;
-}
-
-.overlay::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-}
-
-.overlay::before,
-.overlay::after {
-    background: linear-gradient(to right, rgba(17, 24, 40, 1), rgba(17, 24, 40, 0));
-    content: "";
-    height: 100%;
-    position: absolute;
-    width: 100px;
-    z-index: 2;
+    background: black;
 }
 
 
-.marquee {
-    flex: 0 0 auto;
-    min-width: 100%;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    animation: scroll 124.8s linear 0s infinite;
-    animation-play-state: running;
-    animation-delay: 0s;
-}
 
-.reverse_direction {
-    animation-direction: reverse;
-}
 
-.normal_direction {
-    animation-direction: normal;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
 
 .wave {
     animation-name: wave-animation;
@@ -118,16 +58,3 @@ body {
     }
 }
 
-
-.lazy-load-image-background.blur.lazy-load-image-loaded {
-    filter: blur(0);
-    transition: filter .3s;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    transition-property: filter;
-}
-
-.lazy-load-image-background.blur {
-    filter: blur(15px);
-}

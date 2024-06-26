@@ -8,6 +8,8 @@ import { Button } from '@components/ui/button/Button'
 import HoverButton from '@components/ui/button/HoverButton'
 import Link from 'next/link'
 import { useNavigation } from '@hooks/useNavigation'
+import { OrbitingCirclesData } from './Orbiting-circles-data'
+import { SeparateAway } from '@components/ui/magicui/separate-away'
 
 interface HeroProps {
 
@@ -60,22 +62,23 @@ const Hero: FC<HeroProps> = ({ }) => {
         {/* grid one */}
         <div className="flex flex-col justify-center items-center lg:items-start">
 
-            <div className="inline-flex items-center justify-between px-1 py-1 pr-4 rounded-full bg-gray-700/60 bg-primary-25 w-fit">
+            <div className="inline-flex items-center justify-between px-1 py-1 pr-4 rounded-full bg-gray-900  w-fit">
                 <span dangerouslySetInnerHTML={{ __html: quote?.emoji }} className="px-2 py-1 mr-3 font-medium rounded-full bg-slate-700 text-neutral-0" />
                 <span dangerouslySetInnerHTML={{ __html: quote?.status }} className="font-[350] text-neutral-100 dark:text-neutral-0" />
             </div>
 
 
+
             <div className="relative h-fit w-full mt-8">
-                <TextAnimation text='My Name Is Nayan & Im' classNameDiv='flex justify-center lg:justify-start items-center' delayTime={0} />
-                <TextAnimation text='Your Web App Developer' classNameDiv='absolute inset-0 top-12 flex justify-center lg:justify-start items-center' delayTime={1} />
+                <TextAnimation text='My Name Is Nayan & Im' classNameDiv='flex justify-center lg:justify-start items-center ' delayTime={0} />
+                <TextAnimation text='Your Web App Developer' classNameDiv='absolute inset-0 top-12 md:top-14 flex justify-center lg:justify-start items-center' delayTime={1} />
             </div>
 
             <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 3, }}
-                className="font-light mt-20 leading-relaxed text-center lg:text-left tracking-wider lg:pb-12 text-white/60 description lg:text-xl">To date, I&apos;ve developed <span className="font-bold">30+ websites</span>, interacted with <span className="font-bold">5 founders</span>, and worked with <span className="font-bold">1 startup</span>. It&apos;s time for you to speak up; let&apos;s get started!</motion.p>
+                className="font-thin mt-20  text-center lg:text-left tracking-wider lg:pb-12 text-white/80 description lg:text-xl antialiased">To date, I&apos;ve developed <span className="font-semibold text-transparent bg-clip-text bg-gradient_green">40+ websites</span>, interacted with <span className="font-semibold text-transparent bg-clip-text bg-gradient_green">4 founders</span>, and worked with <span className="font-semibold text-transparent bg-clip-text bg-gradient_green">3 startup</span>. It&apos;s time for you to speak up; let&apos;s get started!</motion.p>
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -83,14 +86,17 @@ const Hero: FC<HeroProps> = ({ }) => {
                 transition={{ duration: 0.4, delay: 4, }}
                 className="flex flex-row gap-3 justify-start mt-6 lg:mt-2 items-center">
 
-                <Button onClick={setIsOpen} className='bg-slate-700 hover:bg-slate-900 px-4 text-base font-normal py-2 rounded-[10px]' variant="default">
+                <Button onClick={setIsOpen} className='bg-gradient_blue_purple px-4 text-base font-normal py-2 rounded-[4px]' variant="default">
                     <span className="pr-2 wave">👋</span>
                     Let&apos;s Talks
                 </Button>
 
-                <Link target='_blank' href="https://www.noblespiritz.org/" >
-                    <HoverButton label='My Company' className='bg-gray-800 py-2' />
-                </Link>
+
+                <Button>
+                    <Link target='_blank' href="https://oruphones.com" >
+                        My Company
+                    </Link>
+                </Button>    
 
 
             </motion.div>
@@ -98,21 +104,7 @@ const Hero: FC<HeroProps> = ({ }) => {
         </div>
 
         {/* grid two */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 100, transition: { delay: 2, duration: .4 } }} className="flex justify-center relative items-center overflow-hidden ">
-            <motion.div initial={{ y: 500, opacity: 0 }}
-                animate={{ y: 0, opacity: [10, 30, 60, 100], transition: { delay: 2, duration: .4, } }}
-                className=""
-            >
-                <Image
-                    src={HeroImage}
-                    width={380}
-                    height={380}
-                    alt='hero_image'
-                    sizes='100'
-                />
-
-            </motion.div>
-        </motion.div>
+        <OrbitingCirclesData />
     </section>
 }
 

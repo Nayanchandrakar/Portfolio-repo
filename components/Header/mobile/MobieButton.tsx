@@ -11,7 +11,7 @@ const MobieButton: FC<MobieButtonProps> = ({ handleClick }) => {
         className='flex justify-center items-center gap-2'>
         <span
             onClick={() => handleClick()}
-            className=" xl:hidden block hover:bg-slate-600 transition-all duration-200 rounded-full cursor-pointer p-2 bg-slate-700">
+            className=" xl:hidden block  transition-all duration-200 rounded-full cursor-pointer p-2 ">
             <AiOutlineMenu
                 size={25}
                 color='rgb(203 213 225)'

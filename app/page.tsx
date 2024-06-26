@@ -5,7 +5,6 @@ import Hero from '@components/pages/Home/Hero'
 import OurModel from '@components/pages/Home/OurModel'
 import Projects from '@components/pages/Home/projects/Projects'
 import Review from '@components/pages/Home/Review'
-import VirtualReality from '@components/pages/Home/VirtualReality'
 import dynamic from 'next/dynamic'
 
 
@@ -15,9 +14,8 @@ const page = async () => {
   const Calendly = dynamic(() => import('@components/pages/Home/Calendly'))
 
   return (
-    <Container className='relative'>
+    <Container>
       <Hero />
-      <VirtualReality />
       <OurModel />
       <Aim />
       <Projects />

@@ -1,41 +1,35 @@
 'use client'
 import { FC } from 'react'
 import { ModalData } from '../../../constants/OurModal'
-import Image from 'next/image'
-import Tilt from 'react-parallax-tilt';
-import { motion } from 'framer-motion'
-import { AnimationType } from '@components/animation/Motion';
-import MotionWrapper from '@components/animation/MotionWrapper';
+import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
+
 
 
 
 const OurModel: FC = () => {
 
     return <div
-        className='grid grid-cols-1 overflow-hidden lg:grid-cols-3 gap-8 mt-20 mx-1'>
+        className='grid grid-cols-1  lg:grid-cols-3 gap-12 mt-16 mx-1'>
         {ModalData?.map((data, index) => {
             const { id, img, para, title } = data
             return (
-                <motion.div key={id}
-                    variants={AnimationType("right", "spring", index * 0.5, 0.75)}
-                    className="">
-                    <Tilt perspective={300} className="flex flex-col items-center justify-center py-8 space-y-1 backdrop-blur-sm rounded-2xl custom_animation  bg-slate-600/20 ring-1 ring-blue-400/20 cursor-pointer parallax_effect">
+                <div className="border border-white/[0.2] flex flex-col items-start  w-full p-4 relative h-[30rem] bg-black">
+                <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
+                <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
+                <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
+                <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
+           
+                <EvervaultCard imageUrl={img}  />
+                <h1 className='text-lg  mt-3 font-semibold text-transparent bg-clip-text bg-gradient_green'>
+                  {title}
+                </h1>
 
-                        <Image
-                            src={img}
-                            alt='No-image'
-                            className='w-[8rem] h-[8rem]'
-                            width={10}
-                            height={10}
-                            sizes='100'
-                        />
-                        <h1 className="text-xl font-bold text-white lg:text-2xl">{title}</h1>
-                        <p dangerouslySetInnerHTML={{ __html: para }} className="px-2 text-sm text-center text-white font-thin" />
-                    </Tilt>
-                </motion.div>
+                <h2 dangerouslySetInnerHTML={{__html:para}} className="text-white mt-3 text-sm font-light"/>
+                
+              </div>
             )
         })}
     </div>
 }
 
-export default MotionWrapper(OurModel)
+export default OurModel

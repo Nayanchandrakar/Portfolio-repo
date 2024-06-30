@@ -24,7 +24,7 @@ const MiniNavbar: FC<MiniNavbarProps> = ({ isOpen, handleClick }) => {
     return (
         <div
             className={`
-              bg-black/40 border-r-[1.5px] border-r-gray-500 backdrop-blur-[250px] fixed translate xl:hidden inset-0 w-[18rem] h-[100vh] p-6 md:p-4 transition-all duration-900 ${isOpen ? "translate-x-0" : "-translate-x-96"} ${isOpen ? "opacity-100" : "opacity-20"}`}
+              bg-black fixed translate xl:hidden inset-0 w-[18rem] h-[100vh] p-6 md:p-4 transition-all duration-900 ${isOpen ? "translate-x-0" : "-translate-x-96"} ${isOpen ? "opacity-100" : "opacity-20"}`}
         >
             <span
                 onClick={() => handleClick()}

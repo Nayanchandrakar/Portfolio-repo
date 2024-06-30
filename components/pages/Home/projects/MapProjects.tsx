@@ -5,6 +5,8 @@ import { FC } from 'react'
 import HoverButton from '@components/ui/button/HoverButton'
 import Link from 'next/link'
 import { ProjectsType } from '@constants/project'
+import { Button } from '@components/ui/button/Button'
+import { BsArrowRight } from 'react-icons/bs'
 
 interface MapProjectsProps extends ProjectsType {
     index: number,
@@ -13,7 +15,7 @@ interface MapProjectsProps extends ProjectsType {
 const MapProjects: FC<MapProjectsProps> = ({ index, id, image, site_url, projectName }) => {
 
 
-    return (<motion.div variants={AnimationType("up", "spring", index * 0.5, 0.75)} className="m-4 rounded-[10px] transition-all duration-300 shadow bg-opacity-60 bg-clip-padding hover:ring-1 hover:ring-blue-400 bg-slate-600/20 ring-1 ring-blue-400/20">
+    return (<motion.div variants={AnimationType("up", "spring", index * 0.5, 0.75)} className="rounded-[10px] transition-all duration-300   hover:ring-1 hover:ring-indigo-400  ring-1 ring-indigo-400/20">
         <div className="p-2">
             <Image
                 alt='project-image'
@@ -30,7 +32,12 @@ const MapProjects: FC<MapProjectsProps> = ({ index, id, image, site_url, project
             </p>
 
             <Link target='_blank' href={site_url}>
-                <HoverButton labelclassName='text-sm font-medium antialiased' label='View Project' className='bg-slate-500 rounded-[6px]' />
+                <Button
+                 className='bg-gradient_blue_purple rounded-[3px]'
+                >
+                    View Project
+                    <BsArrowRight className='ml-1 w-4 h-4' />
+                </Button>
             </Link>
         </div>
     </motion.div>)

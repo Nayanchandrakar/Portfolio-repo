@@ -20,8 +20,10 @@ const Circle = forwardRef<
     </div>
   );
 });
+Circle.displayName = "Circle"
 
-export function AnimatedBeamDemo() {
+
+function AnimatedBeamDemo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
@@ -110,6 +112,10 @@ export function AnimatedBeamDemo() {
     </div>
   );
 }
+
+AnimatedBeamDemo.displayName = "AnimatedBeamDemo"
+
+export {AnimatedBeamDemo}
 
 const Icons = {
   notion: () => (

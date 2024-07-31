@@ -1,4 +1,3 @@
-'use client'
 import { FC } from 'react'
 import { ModalData } from '../../../constants/OurModal'
 import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
@@ -13,7 +12,7 @@ const OurModel: FC = () => {
         {ModalData?.map((data, index) => {
             const { id, img, para, title } = data
             return (
-                <div className="border border-white/[0.2] flex flex-col items-start  w-full p-4 relative h-[30rem] bg-black">
+                <div key={index+34234} className="border border-white/[0.2] flex flex-col items-start  w-full p-4 relative h-[30rem] bg-black">
                 <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
                 <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
                 <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />

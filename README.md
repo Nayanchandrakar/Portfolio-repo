@@ -2,8 +2,6 @@
 ### 😃😃😃 preview [Portfolio Website](https://nayanchandrakar.vercel.app/).
 This website showcases my skills, projects and experiences, and serves as a platform for potential employers and collaborators to learn more about me and my work.
 
-![Screenshot (97)](https://github.com/Nayanchandrakar/Portfolio-competition/assets/100008163/d2acfcfc-3e26-4758-993b-f24329f82337)
-
 ## Optimization Results
 ![Screenshot (98)](https://github.com/Nayanchandrakar/Portfolio-competition/assets/100008163/07d354e4-335d-4253-98cf-837a60d27a65)
 
